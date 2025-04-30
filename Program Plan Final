@@ -1,0 +1,26 @@
+Trivial Program:
+• Make a program that outputs hello world
+• Won't use any data structure
+• Basic print statement
+Intermediate program 1:
+• To-Do List program that allows the user to insert new items that are sorted
+automatically based on the given priority value.
+• array
+• Array methods
+Intermediate program 2:
+• Tic-Tac-Toe game that lets the user play either against another player or a
+computer, game will be played on a webpage.
+• Will use 2d array.
+• Shows JavaScript object-oriented feature.
+Intermediate program 3:
+• Basic calculator with a simple html web interface that allows the user to do
+calculations, and displays recent calculations
+• Will not use any data structures
+• Utilizes JavaScript's ability to add functionality to web pages
+Complex program:
+• Queueing program for simulated waitlist for pre-ordering a product. Users can enter
+their details into the program, which places them into the queue. Then the program
+periodically moves the queue forward
+• Queue
+• Uses a queue, will have people “moving up in the queue”, OOP, User objects will
+include first and last name age and email
