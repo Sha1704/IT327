@@ -1,3 +1,8 @@
 https://developer.mozilla.org/en-US/docs/Web/JavaScript
 https://softteco.com/blog/history-of-javascript#:~:text=JavaScript%20was%20created%20to%20be,and%20plug%2Dins%20to%20function.
 https://iq.js.org/questions/javascript/javascript-programming-paradigms
+https://www.w3schools.com/js/js_history.asp#:~:text=JavaScript%20was%20invented%20by%20Brendan,Mozilla's%20latest%20version%20was%201.8.
+https://www.electronjs.org/
+https://www.geeksforgeeks.org/how-to-create-a-desktop-app-using-javascript/
+https://www.computerscience.org/bootcamps/guides/javascript-uses/
+https://www.turing.com/kb/javascript-for-backend-development
