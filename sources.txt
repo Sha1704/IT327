@@ -6,3 +6,7 @@ https://www.electronjs.org/
 https://www.geeksforgeeks.org/how-to-create-a-desktop-app-using-javascript/
 https://www.computerscience.org/bootcamps/guides/javascript-uses/
 https://www.turing.com/kb/javascript-for-backend-development
+https://developer.mozilla.org/en-US/docs/Glossary/Dynamic_typing
+https://code-basics.com/languages/javascript/lessons/data-types-weak-typing
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain
+https://www.geeksforgeeks.org/prototype-inheritance-in-javascript/
