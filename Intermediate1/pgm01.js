@@ -41,11 +41,11 @@ function userInput() //takes user tasks and adds them.
 }
 
 addToList("Do Homework", 2);
-addToList("Do same", 2);
+addToList("Prepare Dinner", 2);
 addToList("Do nothing", 3);
-addToList("Have fun", 5);
-addToList("Have ", 5);
-addToList("Do Hok", 4);
+addToList("Go to the mall", 5);
+addToList("Go shopping ", 5);
+addToList("Work on car", 4);
 addToList("Do chores", 1);
 
 printList(list);
