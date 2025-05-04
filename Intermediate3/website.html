@@ -1,34 +1,53 @@
+<!-- 
+    Calculator Application
+
+    This is a simple web-based calculator interface that allows users to perform
+    basic arithmetic operations (addition, subtraction, multiplication, and division).
+    It also provides a history of operations performed, which can be displayed on the interface.
+
+    Author: Adiboshi Shalom
+    Date: May 4, 2025
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intermidiate program 3</title>
+    <title>Intermediate Program 3</title>
 </head>
 <body>
-        <h1> Calculator Program </h1>
-        
-        <label>Choose Operation</label>
-        
-        <select id="operation">
-            <option value="1">Addition</option>
-            <option value="2">Subtraction</option>
-            <option value="3">Multiplication</option>
-            <option value="4">Division</option>
-        </select><br><br>
+    <!-- Main heading for the calculator program -->
+    <h1> Calculator Program </h1>
+    
+    <!-- Dropdown for selecting the arithmetic operation -->
+    <label>Choose Operation</label>
+    <select id="operation">
+        <option value="1">Addition</option>
+        <option value="2">Subtraction</option>
+        <option value="3">Multiplication</option>
+        <option value="4">Division</option>
+    </select><br><br>
 
-        <label>First number:</label>
-        <input type="number" id="num1"><br><br>
+    <!-- Input field for the first number -->
+    <label>First number:</label>
+    <input type="number" id="num1"><br><br>
 
-        <label>Second number:</label>
-        <input type="number" id="num2"><br><br>
+    <!-- Input field for the second number -->
+    <label>Second number:</label>
+    <input type="number" id="num2"><br><br>
 
-        <button id="calcBtn">Calculate</button>
-        <button id="historyBtn">Show History</button>
+    <!-- Buttons for performing calculation and showing history -->
+    <button id="calcBtn">Calculate</button>
+    <button id="historyBtn">Show History</button>
 
-        <h2 id="result"></h2>
-        <ul id="historyList"></ul>
+    <!-- Section to display the result of the calculation -->
+    <h2 id="result"></h2>
 
-        <script type="module" src="main.js"></script>
+    <!-- Unordered list to display the history of operations -->
+    <ul id="historyList"></ul>
+
+    <!-- Link to the JavaScript file -->
+    <script type="module" src="main.js"></script>
 </body>
 </html>
