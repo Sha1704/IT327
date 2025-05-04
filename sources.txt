@@ -1,1 +1,3 @@
 https://developer.mozilla.org/en-US/docs/Web/JavaScript
+https://softteco.com/blog/history-of-javascript#:~:text=JavaScript%20was%20created%20to%20be,and%20plug%2Dins%20to%20function.
+https://iq.js.org/questions/javascript/javascript-programming-paradigms
