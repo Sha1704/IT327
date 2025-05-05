@@ -1,0 +1,43 @@
+/*import {List} from './pgm01.js';
+
+const list = new List();
+
+let addMore = true;
+
+while(addMore)
+{
+    var answer = prompt("Would you like to add a task? (y/n)");
+    if(answer.toLowerCase() === 'y')
+    {
+        list.userInput();
+    }
+    else
+    {
+        addMore = false;
+    }
+}
+
+list.printList();*/
+import { List } from './pgm01.js';
+
+document.getElementById("start-btn").addEventListener("click", () => {
+    const list = new List();
+
+    function askNext() {
+        const answer = prompt("Would you like to add a task? (y/n)");
+        if (answer && answer.toLowerCase() === 'y') {
+            list.userInput();
+            askNext();
+        } else {
+            const tasks = list.getList();
+    
+            if (tasks.length === 0) {
+                document.getElementById("output").textContent = "No tasks were added.";
+            } else {
+                list.printList(); 
+            }
+        }
+    }
+
+    askNext();
+});

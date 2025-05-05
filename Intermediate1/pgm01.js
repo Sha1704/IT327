@@ -1,51 +1,55 @@
-var list = [];
-
-function addToList(name, priority)
+export class List 
 {
-    var insertTask =  { //creates an object to hold the info of the task
-        name:name,
-        priority:priority
-    };
-    
-    list.push(insertTask); //adds to the array
-   
-
-    var listSize = list.length-1;
-
-    for(var i = 0; i<listSize;i++)
+    constructor() 
     {
-         if(list[i].priority>list[listSize].priority) //sorts the array by priority
-        {
-            var temp = list[listSize];
-            list[listSize]=list[i];
-            list[i]=temp;
+        this.list = [];
+    }
+
+    addToList(name, priority) 
+    {
+        const insertTask = 
+        { // holds the values of the task
+            name: name,
+            priority: parseInt(priority)
+        };
+
+        this.list.push(insertTask); //adds to the list
+
+        const listSize = this.list.length - 1;
+        for (let i = 0; i < listSize; i++) 
+        { //sorts the list
+            if (this.list[i].priority > this.list[listSize].priority) 
+            {
+                const temp = this.list[listSize];
+                this.list[listSize] = this.list[i];
+                this.list[i] = temp;
+            }
         }
-        
     }
-   
-}
 
-function printList(list) // prints the list in order
-{
-    for(var i =0;i<list.length;i++)
+    getList() //returns list
+    { 
+        return this.list;
+    }
+
+    userInput() //takes user input for another task
     {
-        console.log(list[i].name);
+        const name = prompt("Enter the name of the task you are doing:");
+        const priority = prompt("Enter the priority level for this task:");
+        this.addToList(name, priority);
+    }
+
+    printList() //prints the list
+    {
+        const output = document.getElementById("output");
+        output.innerHTML = '';
+
+        this.list.forEach((item, i) => 
+        {
+            const taskDiv = document.createElement('div');
+            taskDiv.classList.add('task-item');
+            taskDiv.textContent = `${i + 1}. ${item.name} Priority: ${item.priority}`;
+            output.appendChild(taskDiv);
+        });
     }
 }
-
-function userInput() //takes user tasks and adds them.
-{
-    var name = prompt("Enter the name of the task you are doing: ");
-    var priority = prompt("Enter the priority level for this task: ");
-    addToList(name, priority);
-}
-
-addToList("Do Homework", 2);
-addToList("Prepare Dinner", 2);
-addToList("Do nothing", 3);
-addToList("Go to the mall", 5);
-addToList("Go shopping ", 5);
-addToList("Work on car", 4);
-addToList("Do chores", 1);
-
-printList(list);
