@@ -6,11 +6,11 @@ import { List } from './pgm01.js';
 document.getElementById("start-btn").addEventListener("click", () => {
     const list = new List();
 
-    function askNext() {
+    function addTasks() {
         const answer = prompt("Would you like to add a task? (y/n)");
         if (answer && answer.toLowerCase() === 'y') {
             list.userInput();
-            askNext();
+            addTasks();
         } else {
             const tasks = list.getList();
     
@@ -22,5 +22,5 @@ document.getElementById("start-btn").addEventListener("click", () => {
         }
     }
 
-    askNext();
+    addTasks();
 });
