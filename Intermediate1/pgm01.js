@@ -1,11 +1,5 @@
-/**
- * To-Do list Logic
- * 
- * This module contains the core logic for a To-Do List.
- * 
- * Author: A John Wirth
- * Date: May 4, 2025
- */
+/* This is the To-Do list Logic.  This module contains the core logic for a To-Do List.
+John Wirth*/
 export class List 
 {
     constructor() 
