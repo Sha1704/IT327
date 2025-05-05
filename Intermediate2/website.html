@@ -1,0 +1,70 @@
+<!-- 
+    Tic Tac Toe Game Interface
+    This HTML file provides the structure and styling for the Tic Tac Toe game. 
+    It includes a game board, buttons for selecting game modes and resetting the game, 
+    and a message area for displaying game status updates. The game logic is handled 
+    by the linked JavaScript file.
+
+    Author: Adiboshi Shalom and John Wirth
+    Date: May 4, 2025
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <style>
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            margin: 20px 0;
+        }
+
+        .cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+
+        .cell.taken {
+            pointer-events: none;
+            background-color: #ddd;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+
+    <div>
+        <button id="player-vs-player">Player vs Player</button>
+        <button id="player-vs-computer">Player vs Computer</button>
+        <button id="reset-game">Reset Game</button>
+    </div>
+
+    <div id="message">Choose a game mode to begin.</div>
+    <div id="board"></div>
+
+    <!-- Load your main script as a module -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>
