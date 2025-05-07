@@ -1,8 +1,10 @@
 import Customer from "./Customer.js";
+import CustomerQueue from "./CustomerQueue.js";
 import Product from "./ProductClass.js";
 
 const productInfo = document.getElementById("productinfo");
 const customerFields = document.getElementById("customerFields");
+const queueStatus = document.getElementById("queueStatus");
 
 const product = new Product();
 console.log(product.displayInfo());
@@ -28,6 +30,7 @@ const submitButton = document.createElement('button');
 submitButton.id = "submitButton";
 submitButton.textContent ="Submit";
 
+const queueLocation = document.createElement('p');
 
 document.getElementById("buyButton").addEventListener("click", function() {
 	console.log("Buy button clicked");
@@ -42,4 +45,23 @@ submitButton.addEventListener("click", function () {
 	console.log(customerName);
 	let customer = new Customer(customerName, 1);
 	customer.printInfo();
+
+	let queue = generateQueue();
+	queue.enqueue(customer);
+	console.log(queue.size());
+	let place = queue.size() - 1;
+	queueLocation.textContent = ("There are " + place + " people in front of you, " + queue.getHead().customer.getName() + " is first!");
+	queueStatus.appendChild(queueLocation)
+	console.log(queue.dequeue().printInfo());
+	console.log(queue.size());
 })
+
+function generateQueue(){
+	let queue = new CustomerQueue();
+	queue.enqueue(new Customer("Billy",2));
+	queue.enqueue(new Customer("Tom",3));
+	queue.enqueue(new Customer("George",4));
+	queue.enqueue(new Customer("Sarah",5));
+	queue.enqueue(new Customer("Lee",6));
+	return queue;
+}
