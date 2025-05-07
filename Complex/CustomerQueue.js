@@ -27,6 +27,16 @@ class CustomerQueue{
 		}
 		return result;
 	}
+
+	size(){
+		count = 0;
+		currNode = this.head;
+		while(currNode !== null){
+			count++;
+			currNode = currNode.next;
+		}
+		return count;
+	}
 }
 export default CustomerQueue
 

@@ -11,5 +11,9 @@ class Customer{
 	getId(){
 		return this.accountId;
 	}
+
+	printInfo(){
+		console.log("Name: " + this.getName() + "\n" + "Id: " + this.getId());
+	}
 }
 export default Customer;
