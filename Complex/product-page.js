@@ -40,6 +40,9 @@ const advanceButton = document.createElement('button');
 advanceButton.id = "advanceButton";
 advanceButton.textContent = "Advance Queue";
 
+const addedToCart = document.createElement('h1');
+addedToCart.textContent = "Congratulations! Item has been added to the cart!";
+
 document.getElementById("buyButton").addEventListener("click", function() {
 	console.log("Buy button clicked");
 	customerFields.appendChild(nameLabel);
@@ -47,11 +50,13 @@ document.getElementById("buyButton").addEventListener("click", function() {
 	customerFields.appendChild(submitButton);
 });
 
+let interval = null;
 submitButton.addEventListener("click", function () {
+
 	console.log("Submit button clicked");
 	let customerName = nameField.value;
 	console.log(customerName);
-	let customer = new Customer(customerName, 1);
+	let customer = new Customer(customerName, "Doe", customerName + "@ilstu.edu", 1);
 	customer.printInfo();
 	generateQueue(queue);
 	queue.enqueue(customer);
@@ -63,17 +68,15 @@ submitButton.addEventListener("click", function () {
 	queueStatus.appendChild(queueLocation);
 	queueStatus.appendChild(estimatedTime);
 
-	debugInfo.textContent = "The following button simulates the passage of 5 mins";
-	debug.appendChild(debugInfo)
+	debugInfo.textContent = "The following button simulates the passage of 5 mins (to avoid waiting 25 mins)";
+	debug.appendChild(debugInfo);
 	debug.appendChild(advanceButton);
+
+	interval = setInterval(() => advanceQueue(queue), 5 * 60 * 1000);
 })
 
 advanceButton.addEventListener("click", function() {
-	queue.dequeue();
-	let place = queue.size() - 1;
-	let eta = place * 5;
-	queueLocation.textContent = ("There are " + place + " people in front of you, " + queue.getHead().customer.getName() + " is first!");
-	estimatedTime.textContent = ("Your estimated wait is " + eta + " mins!");
+	advanceQueue(queue);
 })
 
 function generateQueue(inputQueue){
@@ -82,4 +85,16 @@ function generateQueue(inputQueue){
 	inputQueue.enqueue(new Customer("George",4));
 	inputQueue.enqueue(new Customer("Sarah",5));
 	inputQueue.enqueue(new Customer("Lee",6));
+}
+
+function advanceQueue(inputQueue){
+	inputQueue.dequeue();
+	let place = inputQueue.size() - 1;
+	let eta = place * 5;
+	queueLocation.textContent = ("There are " + place + " people in front of you, " + inputQueue.getHead().customer.getName() + " is first!");
+	estimatedTime.textContent = ("Your estimated wait is " + eta + " mins!");
+	if (inputQueue.size() === 1){
+		clearInterval(interval);
+		debugInfo.appendChild(addedToCart);
+	}
 }
